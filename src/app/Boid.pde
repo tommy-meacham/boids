@@ -212,4 +212,24 @@ class Boid {
       }
     }
   }
+  
+  void setMaxForce(float maxForce) {
+    MAX_FORCE = maxForce;
+  }
+  
+  void setMaxSpeed(float maxSpeed) {
+    MAX_SPEED = maxSpeed;
+  }
+  
+  void setAlignmentForce(float alignmentForce) {
+    ALIGN_FORCE = alignmentForce;
+  }
+  
+  void setSeparationForce(float separationForce) {
+    SEP_FORCE = separationForce;
+  }
+  
+  void setCohesionForce(float cohesionForce) {
+    SEP_FORCE = cohesionForce;
+  }
 }

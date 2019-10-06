@@ -41,6 +41,16 @@ class Flock {
       boids.remove(b);
     }
   }
+  
+  void updateForceConstants(float maxForce, float maxSpeed, float alignmentForce, float separationForce, float cohesionForce) {
+    for(Boid b : boids) {
+      b.setMaxForce(maxForce);
+      b.setMaxSpeed(maxSpeed);
+      b.setAlignmentForce(alignmentForce);
+      b.setSeparationForce(separationForce);
+      b.setCohesionForce(cohesionForce);
+    }
+  }
 
   void drawNeighbors(float neighborDist) {
     for(Boid b : boids) {

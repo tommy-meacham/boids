@@ -12,7 +12,7 @@ class Predator extends Boid {
      if(prey == null){
        prey = findPrey(boids);
      } else {
-       drawPreyLine(); 
+       //drawPreyLine(); 
      }
      
      hunt(prey);
