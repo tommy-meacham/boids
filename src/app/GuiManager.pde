@@ -1,3 +1,4 @@
+import g4p_controls.*;
 
 public abstract class GuiManager {
   
