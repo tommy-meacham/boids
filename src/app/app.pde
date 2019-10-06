@@ -1,5 +1,7 @@
+
 Flock flock;
 Predator pred;
+GuiLayer guiLayer;
 
 
 float MAX_FORCE = 0.05;
@@ -14,6 +16,8 @@ boolean mouseLock = false;
 
 void setup() {
   size(700, 700,P3D);
+  guiLayer = new GuiLayer(this);
+  
   flock = new Flock();
   
   // Add an initial set of boids into the system
