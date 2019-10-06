@@ -1,7 +1,7 @@
 
 Flock flock;
 Predator pred;
-GuiLayer guiLayer;
+GuiLayer gui;
 
 
 float MAX_FORCE = 0.05;
@@ -15,17 +15,17 @@ float COH_FORCE = 1.0;
 
 void setup() {
   size(700, 700,P3D);
-  guiLayer = new GuiLayer(this);
+  
+  //Define the Gui Parameters of the app
+  gui = new GuiLayer(this);
   
   GSlider slider = new GSlider(this, width-200, height-100, 200, 100, 50);
   slider.setShowValue(true);
   slider.setLimits(1.5,0.0,2.0);
-  guiLayer.addSlider("SEP_FORCE", slider);
-    
+  gui.addSlider("SEP_FORCE", slider);
   
+  //Define the boids in the system
   flock = new Flock();
-  
-  // Add an initial set of boids into the system
   for (int i = 0; i < 700; i++) {
     flock.addBoid(new Boid(MAX_FORCE, MAX_SPEED, NEIGHBOR_DIST, DESIRED_SEP, SEP_FORCE, ALIGN_FORCE, COH_FORCE));
   }
@@ -40,15 +40,15 @@ void draw() {
    
   flock.run();
   
-  if(guiLayer.isMouseLocked()){
+  if(gui.isMouseLocked()){
     flock.drawNeighbors(NEIGHBOR_DIST);
   }
 }
 
 void mousePressed() {
-  guiLayer.setMouseLock(true); 
+  gui.setMouseLock(true); 
 }
 
 void mouseReleased() {
-  guiLayer.setMouseLock(false);
+  gui.setMouseLock(false);
 }
