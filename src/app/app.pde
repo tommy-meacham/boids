@@ -31,24 +31,15 @@ void setup() {
 
 void draw() {
   background(255);
-  camera(mouseX*2, height/2, mouseY*3, width/2, height/2, 0, 0, 1, 0);
-  //camera(width/2, height/2, 1000, width/2, height/2, 0, 0, 1, 0);
+  //camera(mouseX*2, height/2, mouseY*3, width/2, height/2, 0, 0, 1, 0);
+  camera(width/2, height/2, 1000, width/2, height/2, 0, 0, 1, 0);
   
-  drawScene();  
+
   flock.run();
   
   if(mouseLock){
     flock.drawNeighbors(NEIGHBOR_DIST);
   }
-}
-
-void drawScene() {
-  pushMatrix();
-  translate(width/2, height/2, 0);
-  stroke(0);
-  noFill();
-  box(width);
-  popMatrix();  
 }
 
 void mousePressed() {
