@@ -6,7 +6,6 @@ public class GuiLayer extends GuiManager {
   public GuiLayer(PApplet app) {
     super(app);
     mouseLock = false;
-    
   } 
   
   public void drawScene() {

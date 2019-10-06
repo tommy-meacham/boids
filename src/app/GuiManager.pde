@@ -17,4 +17,8 @@ public abstract class GuiManager {
   public void addSlider(String name, GSlider slider) {
     sliders.put(name, slider);
   }
+  
+  public GSlider getSlider(String name) {
+    return sliders.get(name);
+  }
 }

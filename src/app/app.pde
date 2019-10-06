@@ -18,7 +18,7 @@ void setup() {
   
   //Define the Gui Parameters of the app
   gui = new GuiLayer(this);
-  
+ 
   GSlider slider = new GSlider(this, width-200, height-100, 200, 100, 50);
   slider.setShowValue(true);
   slider.setLimits(1.5,0.0,2.0);
@@ -37,7 +37,9 @@ void setup() {
 void draw() {
   background(255);
   camera(width/2, height/2, 1000, width/2, height/2, 0, 0, 1, 0);
+  //camera(mouseX*2, height/2, mouseY*3, width/2, height/2, 0, 0, 1, 0);
    
+  //gui.drawScene();
   flock.run();
   
   if(gui.isMouseLocked()){
